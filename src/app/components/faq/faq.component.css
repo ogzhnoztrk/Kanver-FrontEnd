@@ -1,0 +1,49 @@
+.card {
+  padding: 80px 35px;
+  opacity: 2;
+}
+
+.accordion-button {
+  border: none;
+  outline: none;
+
+  font-size: 15px;
+  background: #fff;
+  padding: 8px 12px;
+  
+  border: 0px solid #ececec;
+  width: 100%;
+  /* :hover {
+    background-color: grey;
+  } */
+  
+}
+
+.accordion-button:hover {
+    background-color: grey;
+    opacity: 2;
+   
+}
+
+.accordion-body {
+  border: none;
+  outline: none;
+  text-decoration: none;
+ 
+}
+
+.accordion-button:not(.collapsed) {
+  border: none;
+  outline: none;
+  background: grey;
+  color: black;
+}
+.accordion-header{
+    opacity: 2;
+}
+.accordion-button:not(.collapsed){
+    opacity: 2;
+}
+.button{
+    opacity: 2;
+}

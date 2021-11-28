@@ -1,0 +1,51 @@
+.bg-danger {
+  background-color: #de0a1e !important;
+}
+.border-danger {
+  border-color: #de0a1e !important;
+}
+.text-danger {
+  color: #de0a1e !important;
+}
+
+.floating-btn {
+  width: 100%;
+  position: fixed;
+  z-index: 4;
+
+  height: 70px;
+  width: 70px;
+  border-radius: 100%;
+  margin-left: 94%;
+  text-align: center;
+  margin-top: 110px;
+}
+.floating-chat {
+  width: 100%;
+  position: fixed;
+  z-index: 4;
+
+  width: 22%;
+  height: 55%;
+  margin-top: -20.5%;
+  margin-left: 77%;
+  border-radius: 10%;
+}
+.f {
+  margin: 28%;
+  margin-left: 76%;
+  width: 23%;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("assets/images/background.jpg");
+
+  /* Full height */
+  /* height: 100%;
+
+   Center and scale the image nicely 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}

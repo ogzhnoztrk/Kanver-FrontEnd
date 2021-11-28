@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Filtreleme, Carousel -->
+    <div class="text-white bg-danger py-4">
+      <div class="container" style="margin: 50px">
+        <div class="row">
+          <div class="col-md-5">
+            <div
+              id="carouselExampleControls"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img
+                    src="assets/images/kanver.png"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/images/kan1.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="assets/images/kan1.jpg"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleControls"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-7">
+            <div class="container" style="margin: 50px">
+              <form class="w-100 border border-danger" action="search.php">
+                <div class="form-group">
+                  <label>Şehir</label>
+                  <input
+                    type="search"
+                    class="form-control form-control-lg"
+                    placeholder="Şehir"
+                  />
+                  <small class="text-muted form-text"></small>
+                </div>
+              </form>
+              <div class="form-group">
+                <label class="form-control-label">Kan Grubu</label
+                ><select
+                  class="form-control form-control-lg"
+                  name="search[bloodgroup]"
+                >
+                  <option value="">Hepsi</option>
+                  <option value="A+">A+</option>
+                  <option value="B+">B+</option>
+                  <option value="O+">O+</option>
+                  <option value="AB+">AB+</option>
+                  <option value="A-">A-</option>
+                  <option value="B-">B-</option>
+                  <option value="O-">O-</option>
+                  <option value="AB-">AB-</option>
+                </select>
+              </div>
+              <label class="form-control-label">Aciliyet</label
+              ><select
+                class="form-control form-control-lg"
+                name="search[bloodgroup]"
+              >
+                <option value="">...</option>
+                <option value="A+">1</option>
+                <option value="B+">2</option>
+                <option value="O+">3</option>
+                <option value="AB+">4</option>
+                <option value="A-">5</option>
+              </select>
+              <div class="d-grid gap-2" style="margin: 10px">
+                <button type="button" class="btn btn-outline-dark btn-lg">
+                  Ara
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mesajlaşma -->
+    <div>
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg floating-btn"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+      >
+        ██
+      </button>
+
+      <div
+        class="modal fade f"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Chat</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">ASasAS</div>
+            <div class="modal-footer" >
+              <div class="row">
+                <div class="col-md-9">
+                  <textarea
+                    class="form-control"
+                    id="exampleFormControlTextarea1"
+                    rows="1"
+                  ></textarea>
+                </div>
+                <div class="col-md-3">
+                  <button type="button" class="btn btn-primary">Gönder</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="card floating-chat" id="chat">
+        <div class="card-body">This is some text within a card body.</div>
+      </div> -->
+    </div>
+
+    <!-- Slogan -->
+    <div
+      class="gradient-overlay py-5 text-center"
+      style="background-image: url('assets/images/background.jpg')"
+    >
+      <div
+        class="container py-5"
+        style="color: whitesmoke; font-size: 31px; font-style: italic"
+      >
+        "Kan Bağışı Geleceğe Bağıştır"
+      </div>
+    </div>
+
+    <!-- İlanlar, Pagination -->
+    <div class="container">
+      <div class="row" style="margin-left: 55px; margin-top: 20px">
+        <div
+          class="col-md-4"
+          style="margin-bottom: 10px"
+          *ngFor="let card of cards"
+        >
+          <div class="card" style="width: 18rem">
+            <img src="{{ card.blood_png }}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h2 class="card-title">{{ card.city }}</h2>
+              <p class="card-text">
+                {{ card.text }}
+              </p>
+              <h2 class="text box">{{ card.tel }}</h2>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGINATION -->
+        <!-- <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+              <a class="page-link">Previous</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#">Next</a>
+            </li>
+          </ul>
+        </nav> -->
+
+        <!-- mevcut donör -->
+        <div class="container" style="margin-bottom: 2rem; margin-top: 5rem">
+          <h3 class="text-center text-danger p-2 m-0">Mevcut Donör Sayısı</h3>
+          <table class="table table-reflow p-0 m-0 text-center table-striped">
+            <tbody>
+              <tr class="text-center text-danger">
+                <td style="color: red">A+</td>
+                <td style="color: red">B+</td>
+                <td style="color: red">AB+</td>
+                <td style="color: red">O+</td>
+              </tr>
+              <tr class="text-center text-muted">
+                <td><span class="counter">20</span></td>
+                <td><span class="counter">32</span></td>
+                <td><span class="counter">16</span></td>
+                <td><span class="counter">88</span></td>
+              </tr>
+              <tr class="text-center text-danger">
+                <td style="color: red">A-</td>
+                <td style="color: red">B-</td>
+                <td style="color: red">AB-</td>
+                <td style="color: red">O-</td>
+              </tr>
+              <tr class="text-center text-muted">
+                <td><span class="counter">125</span></td>
+                <td><span class="counter">13</span></td>
+                <td><span class="counter">64</span></td>
+                <td><span class="counter">71</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!--credit -->
+    <div class="text-white bg-dark">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <p class="text-center text-white">Powered By Algorthym</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 
+     -->
+  </body>
+</html>

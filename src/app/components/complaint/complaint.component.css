@@ -1,0 +1,43 @@
+.wrap {
+  width: 1250px;
+
+  margin: 0 auto;
+}
+.row {
+  margin: 0;
+}
+
+.header {
+  height: 10px;
+
+  margin-bottom: 10px;
+}
+
+.content {
+  width: 800px;
+  background-color: whitesmoke;
+  height: 550px;
+  float: right;
+}
+
+.content:header {
+  height: 25px;
+}
+.form-control {
+  padding: 12px 12px;
+}
+
+.sidebar {
+  width: 420px;
+  background-color: whitesmoke;
+  height: 550px;
+
+  float: left;
+}
+.page-title {
+  text-align: center;
+}
+
+.page-content-header {
+  padding: 10px;
+}

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <style type="text/css">
+    .navbar {
+      width: 100%;
+      position: fixed;
+
+      z-index: 2;
+    }
+  </style>
+
+  <div class="container">
+    <!-- <div class="container-fluid">
+      <a class="navbar-brand" href="#">Kan Ver</a>
+      <a class="navbar-brand" href="#">|</a>
+      <a class="navbar-brand" href="#">Kan Verme Noktaları</a>
+      <a class="navbar-brand" href="#">Şikayet</a>
+    </div> -->
+    <a class="navbar-brand" href="/">Kan Ver |</a>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" [routerLink]="['/blood-points']" routerLinkActive="router-link-active" 
+          >Kan Verme Noktaları
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/faq"
+          >Sık Sorulan Sorular
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="/complaint">Şikayet </a>
+      </li>
+    </ul>
+    <div class="d-flex">
+      <button type="button" class="btn btn-outline-success"  style="margin-right: 5px" [routerLink]="['/login']" routerLinkActive="router-link-active" > Giriş</button>
+
+      <button type="button" class="btn btn-outline-success" [routerLink]="['/register']" routerLinkActive="router-link-active" >Kayıt Ol</button>
+    </div>
+  </div>
+</nav>
