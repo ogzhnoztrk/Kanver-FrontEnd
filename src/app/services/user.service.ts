@@ -17,7 +17,7 @@ export class UserService {
     return this.httpClient.get<ListResponseModel<User>>(newPath);
   }  
 
-  registerUser(user:User){
-    let newPath = this.apiUrl + 
+  registerUser(user:User):Observable<ListResponseModel<User>>{
+      return this.httpClient.post<ListResponseModel<User>>(this.apiUrl+"postUser", user);
   }
 }
