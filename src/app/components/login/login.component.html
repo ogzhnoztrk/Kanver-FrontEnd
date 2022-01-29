@@ -35,6 +35,7 @@
               class="form-control"
               id="mail"
               aria-describedby="emailHelp"
+             
             />
             <div id="emailHelp" class="form-text" style="color: black">
               Mail adresiniz hiç kimse ile paylaşılmayacaktır.
@@ -48,7 +49,12 @@
               style="color: black"
               >Şifre</label
             >
-            <input type="password" class="form-control" id="password" />
+            <input
+              type="password"
+              class="form-control"
+              id="pass"
+             
+            />
           </div>
           <div class="mb-3 form-check">
             <input
@@ -60,15 +66,21 @@
             <label class="form-check-label" for="exampleCheck1"
               >Beni Hatırla</label
             >
-            <a href="login/forgot-password" style="color: rgba(0, 0, 0, 0.585); margin-left: 15rem;">
+            <a
+              href="login/forgot-password"
+              style="color: rgba(0, 0, 0, 0.585); margin-left: 15rem"
+            >
               Şifremi Unuttum
-             </a>
-
-
+            </a>
           </div>
-        
 
-          <button id="submit" class="btn btn-success">Giriş</button>
+          <button
+            id="submit"
+            class="btn btn-success"
+            (click)="userLogin()"
+          >
+            Giriş
+          </button>
         </form>
       </ul>
     </div>

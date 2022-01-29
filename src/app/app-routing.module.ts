@@ -33,7 +33,7 @@ const routes: Routes = [
     component: ComplaintComponent
   },
   {
-    path:'profile',
+    path:'profile/:id',
     component: ProfileComponent
   },
   {

@@ -136,7 +136,6 @@
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
-        
       >
         <div class="modal-dialog">
           <div class="modal-content">
@@ -150,7 +149,7 @@
               ></button>
             </div>
             <div class="modal-body">ASasAS</div>
-            <div class="modal-footer" >
+            <div class="modal-footer">
               <div class="row">
                 <div class="col-md-9">
                   <textarea
@@ -191,16 +190,18 @@
         <div
           class="col-md-4"
           style="margin-bottom: 10px"
-          *ngFor="let card of cards"
+          *ngFor="let announcement of announcements"
         >
           <div class="card" style="width: 18rem">
-            <img src="{{ card.blood_png }}" class="card-img-top" alt="..." />
+            <img
+              src="assets/images/blood-types/ab-.png"
+              class="card-img-top"
+              alt="..."
+            />
             <div class="card-body">
-              <h2 class="card-title">{{ card.city }}</h2>
-              <p class="card-text">
-                {{ card.text }}
-              </p>
-              <h2 class="text box">{{ card.tel }}</h2>
+              <h2 class="card-title">{{announcement.announcementDate}}</h2>
+              <p class="card-text">{{announcement.announcementDate}}</p>
+              <h2 class="text box">{{announcement.announcementDate}}</h2>
             </div>
           </div>
         </div>

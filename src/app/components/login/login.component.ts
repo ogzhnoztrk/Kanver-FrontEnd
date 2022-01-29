@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
 declare var $: any;
 
 @Component({
@@ -7,24 +8,22 @@ declare var $: any;
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
+    result:any;
 
-  ngOnInit(): void {
-    $(document).ready(function () {
-      $('#submit').click(function (event: Event) {
-        event.preventDefault();
 
-        var ValidEmail = $('#mail').val() === 'asd@asd.com';
-        var ValidPassword = $('#password').val() === 'a';
+  constructor(private userService: UserService) {}
 
-        if (ValidEmail === true && ValidPassword === true) {
-          $('.valid').css('display', 'block');
+  ngOnInit(): void {}
 
-          window.location.href = '/profile';
-        } else {
-          $('.error').css('display', 'block');
-        }
-      });
+  userLogin() {
+    this.userService.loginUser($('#mail').val(), $('#pass').val()).subscribe(resp => {
+      this.result = resp.success;
     });
+    if(this.result){
+      window.location.href = '/profile'
+    }else{
+      $('.error').css('display', 'block');
+    }
+
   }
 }
