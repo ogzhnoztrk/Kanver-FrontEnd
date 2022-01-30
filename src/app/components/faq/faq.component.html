@@ -3,9 +3,10 @@
     background-image: url('assets/images/background.jpg');
     margin-bottom: 15px;
   "
+  
 >
   <div class="container">
-    <div class="card" style="background-color: rgba(245, 245, 245, 0.5)">
+    <div class="card"  style="background-color: rgba(245, 245, 245, 0.5)">
       <div style="margin-top: 15px;">
         <div class="page-content-header">
           <div class="row">
@@ -18,9 +19,9 @@
           </div>
         </div>
 
-        <div class="accordion" id="accordionExample">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
+        <div class="accordion" id="accordionExample" *ngFor="let faq of faqs"   >
+          <div class="accordion-item"  >
+            <h2 class="accordion-header" id="headingOne" >
               <button
                 id="button1"
                 class="accordion-button collapsed"
@@ -29,8 +30,9 @@
                 data-bs-target="#collapseOne"
                 aria-expanded="true"
                 aria-controls="collapseOne"
+                
               >
-                1.Biz kimiz ?
+             {{faq.question}}
               </button>
             </h2>
             <div
@@ -39,6 +41,7 @@
               aria-labelledby="headingOne"
               data-bs-parent="#accordionExample"
             >
+<<<<<<< HEAD
               <div class="accordion-body">
                 <strong>BİZ</strong> 3 Gönüllü arkideşiz.
               </div>
@@ -139,9 +142,14 @@
             >
               <div class="accordion-body">
                 cevap
+=======
+              <div class="accordion-body" >
+               {{faq.answer}}
+>>>>>>> 7bd8f5dafb8762678a540506983335a00330818c
               </div>
             </div>
           </div>
+          
         </div>
       </div>
     </div>

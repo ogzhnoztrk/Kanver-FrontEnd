@@ -1,5 +1,5 @@
 export class Faq {
-    FaqId: number | any;
-    Question: string | any;
-    Answer: string | any;
+    faqId:  any;
+    question:  any;
+    answer: any;
   }
