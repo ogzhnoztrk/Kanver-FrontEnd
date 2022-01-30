@@ -18,6 +18,8 @@ export class LoginComponent implements OnInit {
   userLogin() {
     this.userService.loginUser($('#mail').val(), $('#pass').val()).subscribe(resp => {
       this.result = resp.success;
+      console.log(this.result);
+      
     });
     if(this.result){
       window.location.href = '/profile'

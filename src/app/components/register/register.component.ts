@@ -16,22 +16,31 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {
    
+    
+    
     this.user.name = 'Oğuzhan';
     this.user.lastName = 'Öztürk';
-    this.user.birthDay = 2000;
+    this.user.identityNumber = "37018041374";
+    this.user.birthDay = new Date("2000-10-04");
+   
     this.user.bloodTypeId = 2;
     this.user.email = 'user7@example.com';
-    this.user.password = '123';
-    this.user.identityNumber = "37018041374";
+    this.user.password = '1234';
+    
+    this.user.phoneNumber="5312939472";
+    
+    
+    console.log(this.user)
+
     this.userRegister();
   }
 
   
   userRegister() {
     
-    this.userService.registerUser(this.user).subscribe(resp =>{
-      console.log(resp)
-    });
+    this.userService.registerUser(this.user).subscribe(res => {
+      console.log(res)
+    })
   }
 
 
