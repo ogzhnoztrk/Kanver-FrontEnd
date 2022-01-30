@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Complaint } from '../models/complaint/complaint';
 import { ListResponseModel } from '../models/listResponseModel';
 import { Observable } from 'rxjs';
+import { ResponseModel } from '../models/response-model';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,8 +13,8 @@ export class ComplaintService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getAnnouncements():Observable<ListResponseModel<Complaint>>{
-    let newPath = this.apiUrl+'/getAllAnnouncement';
-    return this.httpClient.get<ListResponseModel<Complaint>>(newPath);
+  add(complaint: Complaint):Observable<ResponseModel>{
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"/postComplaint",complaint)
+
   }
 }

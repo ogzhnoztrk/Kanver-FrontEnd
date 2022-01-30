@@ -13,30 +13,30 @@
              <br>
                <div class="row">
               
-             <form > 
+             <form [formGroup]="complaintAddForm" > 
                 
-                <div class="input-block">
+                <div class="formGroup">
                     <label for="contact_author" style="text-align: center;">
                         <strong>Ad Soyad</strong> (gerekli)</label><br>
-                    <input type="text" name="contact_author" id="contact_author" required>
+                    <input type="text" name="contact_author" id="fullName" formControlName="fullName" class="form-control" required>
                 </div>
-                <div class="input-block">
+                <div class="formGroup">
                     <label for="_replyto">
                         <strong>E-Posta Adresi</strong> (gerekli)</label><br>
-                    <input type="email" name="_replyto" id="_replyto" required>
+                    <input type="email" name="_replyto" id="email" formControlName="email" class="form-control" required>
                 </div>            
-                <div class="input-block">
+                <div class="formGroup">
                     <label for="contact_subject">
                         <strong>Şikayet Konusu</strong> (gerekli)</label><br>
-                    <input type="text" name="contact_subject" id="contact_subject" required>
+                    <input type="text" name="contact_subject" id="complaintSubject" formControlName="complaintSubject" class="form-control" required>
                 </div>
-                <div class="textarea-block">
+                <div class="formGroup">
                     <label for="contact_content">
                         <strong>Şikayet</strong> (gerekli)</label><br>
-                    <textarea name="contact_content" id="contact_content" required></textarea>
+                    <textarea name="contact_content" id="complaintContent" formControlName="complaintContent" class="form-control" required></textarea>
                 </div>
                
-                <button onclick="alert('Başarıyla Gönderildi')">Gönder</button>
+                <button (click)="add()" onclick="alert('Başarıyla Gönderildi')">Gönder</button>
             </form>
        
         </div>

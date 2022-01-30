@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,6 +17,7 @@ import { BloodPointsComponent } from './components/blood-points/blood-points.com
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { AboutComponent } from './components/about/about.component';
 import { UserService } from './services/user.service';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -39,6 +40,10 @@ import { UserService } from './services/user.service';
     BrowserAnimationsModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [UserService],
   bootstrap: [AppComponent],
