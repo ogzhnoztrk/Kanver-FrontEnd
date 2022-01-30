@@ -1,6 +1,11 @@
-
-<body >
-  <div class="py-5" style="background-image: url('assets/images/background.jpg'); margin-bottom: 15px;">
+<body>
+  <div
+    class="py-5"
+    style="
+      background-image: url('assets/images/background.jpg');
+      margin-bottom: 15px;
+    "
+  >
     <div
       class="card"
       style="
@@ -24,21 +29,20 @@
         "
       >
         <div>
-          <h2>Biz Kimiz</h2>
-          <hr />
-          <div>adasdasdasd</div>
           <img
-            style="margin-top: 1cm"
+            style="margin-top: 1cm; margin-bottom: 1cm"
             src="assets/images/Algorithym.jpg"
             class="d-block w-100"
             alt="..."
           />
-          <h2>Vizyon</h2>
-          <hr />
-          <div>adasdasdasd</div>
-          <h2>Misyon</h2>
-          <hr />
-          <div>asdasdasdasd</div>
+
+          <div *ngFor="let about of abouts">
+            <div class="container" style="margin-top: 1cm; margin-bottom: 1cm">
+              <h2>{{ about.head }}</h2>
+              <hr />
+              <div>{{ about.content }}</div>
+            </div>
+          </div>
         </div>
       </ul>
     </div>
