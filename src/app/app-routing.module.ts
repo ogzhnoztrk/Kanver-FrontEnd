@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from './components/about/about.component';
 
 const routes: Routes = [
   {
@@ -43,6 +44,10 @@ const routes: Routes = [
   {
     path:'login/forgot-password',
     component: ForgotPasswordComponent
+  },
+  {
+    path:'about',
+    component: AboutComponent
   }
 
   
