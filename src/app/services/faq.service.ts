@@ -12,7 +12,7 @@ export class FaqService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getAnnouncements():Observable<ListResponseModel<Faq>>{
+  getFaqs():Observable<ListResponseModel<Faq>>{
     let newPath = this.apiUrl+'/getAllFaq';
     return this.httpClient.get<ListResponseModel<Faq>>(newPath);
   }
