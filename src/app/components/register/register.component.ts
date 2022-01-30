@@ -30,8 +30,7 @@ export class RegisterComponent implements OnInit {
     this.user.phoneNumber="5312939472";
     
     
-    console.log(this.user)
-
+ 
     this.userRegister();
   }
 
