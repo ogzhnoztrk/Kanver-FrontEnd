@@ -16,7 +16,10 @@
                 <div class="mt-3" >
                   <h4 style="color: black;">{{user.name.toUpperCase()}}</h4>
                   <h4 class="text mb-1"style="color: black;">Id: {{user.userId}}</h4>
-                  <h4 class="text font-size-sm" style="color: black;">Bursa</h4>
+                  <h4 class="text mb-1"style="color: black;">{{user.email}}</h4>
+                  <h4 class="text mb-1"style="color: black;">+90{{user.phoneNumber}}</h4>
+                  <h4 class="text mb-1"style="color: black;">{{user.identityNumber}}</h4>
+                  
                   <button
                     class="btn btn-primary"
                     data-bs-toggle="modal"
@@ -141,7 +144,7 @@
                   <h6 class="mb-0">Ad- Soyad</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" placeholder="Ahmet Bilmemne" />
+                  <input type="text" class="form-control" id="fullName" placeholder="Ahmet Bilmemne" />
                 </div>
               </div>
               <div class="row mb-3">
@@ -152,6 +155,7 @@
                   <input
                     type="text"
                     class="form-control"
+                    id="phoneNumber"
                     placeholder="+90 (554) 332 25 65"
                   />
                 </div>
@@ -161,16 +165,16 @@
                   <h6 class="mb-0">Kan Grubu</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <select id="inputState" class="form-select">
-                    <option value="">...</option>
-                    <option value="A+">A+</option>
-                    <option value="B+">B+</option>
-                    <option value="O+">O+</option>
-                    <option value="AB+">AB+</option>
-                    <option value="A-">A-</option>
-                    <option value="B-">B-</option>
-                    <option value="O-">O-</option>
-                    <option value="AB-">AB-</option>
+                  <select id="bloodType" class="form-select">
+                    
+                    <option value="1">A+</option>
+                    <option value="2">B+</option>
+                    <option value="3">O+</option>
+                    <option value="4">AB+</option>
+                    <option value="5">A-</option>
+                    <option value="6">B-</option>
+                    <option value="7">O-</option>
+                    <option value="8">AB-</option>
                   </select>
                 </div>
               </div>
@@ -273,6 +277,7 @@
                   <input
                     type="text"
                     class="form-control"
+                    id="explanation"
                     placeholder="SDÜ Hastanesi"
                   />
                 </div>
@@ -282,12 +287,12 @@
                   <h6 class="mb-0">Aciliyet Durumu</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <select id="inputState" class="form-select">
-                    <option value="">0</option>
-                    <option value="A+">1</option>
-                    <option value="B+">2</option>
-                    <option value="O+">3</option>
-                    <option value="AB+">4</option>
+                  <select id="urgency" class="form-select">
+                   
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
                   </select>
                 </div>
               </div>
@@ -328,7 +333,8 @@
                     type="button"
                     class="btn btn-primary px-4"
                     value="İlan Ekle"
-                    onclick="window.alert('ilan başarıyla eklendi')"
+                    
+                    (click)="addAnnouncement()"
                   />
                 </div>
               </div>

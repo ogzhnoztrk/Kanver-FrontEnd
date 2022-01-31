@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from 'src/app/models/user/user';
-import { UserService } from 'src/app/services/user.service';
+import { Announcement } from 'src/app/models/announcement/announcement';
 
+import { User } from 'src/app/models/user/user';
+import { AnnouncementService } from 'src/app/services/announcement.service';
+import { UserService } from 'src/app/services/user.service';
+declare var $: any;
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -10,8 +13,12 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class ProfileComponent implements OnInit {
   user = new User();
+  announcement = new Announcement();
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private userService: UserService,
+    private announcementService: AnnouncementService
+  ) {}
 
   ngOnInit(): void {
     var q = document.URL;
@@ -34,17 +41,6 @@ export class ProfileComponent implements OnInit {
   }
 
   getUserByUserId() {
-    // this.user.bloodTypeId=1;
-    // this.user.name="asdasd";
-    // this.user.lastName="asdasd";
-    // this.user.email="asdad";
-    // this.user.phoneNumber="asdad";
-    // this.user.password="asdad";
-    // this.user.identityNumber="asdasdasd";
-    // this.user.birthDay=new Date("2000-10-04")
-
-    //console.log(this.user)
-
     var q = document.URL;
     var id = parseInt(q.split('profile/')[1]);
 
@@ -54,5 +50,26 @@ export class ProfileComponent implements OnInit {
       this.user.userId = values[0];
       console.log(values);
     });
+  }
+  addAnnouncement() {
+    const d = new Date();
+    let date = d.toString();
+    this.announcement.fullName = $('#fullName').val();
+    this.announcement.phoneNumber = $('#phoneNumber').val();
+    this.announcement.bloodTypeId = parseInt($('#bloodType').val());
+    this.announcement.cityId = parseInt($('#city').val());
+    this.announcement.explanation = $('#explanation').val();
+    this.announcement.urgency = parseInt($('#urgency').val());
+    console.log(this.announcement);
+    console.log("name"+typeof this.announcement.fullName)
+    console.log("number" + typeof this.announcement.phoneNumber)
+    console.log("blood"+typeof this.announcement.bloodTypeId)
+    console.log("city"+typeof this.announcement.cityId)
+    console.log("expl"+typeof this.announcement.explanation)
+    console.log("urgency"+typeof this.announcement.urgency)
+
+    this.announcementService
+      .addAnnouncement(this.announcement)
+      .subscribe();
   }
 }

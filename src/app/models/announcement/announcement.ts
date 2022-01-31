@@ -1,9 +1,9 @@
 export class Announcement {
-  announcementId: number | any;
-  userId: number | any;
+  announcementId: number = 0;
+  fullName: string;
   bloodTypeId: number | any;
   cityId: number | any;
   urgency: number | any;
-  announcementDate: Date | any;
-  quantity: number | any;
+  phoneNumber: string;
+  explanation: string;
 }
