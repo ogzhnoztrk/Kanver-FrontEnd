@@ -1,13 +1,13 @@
 export class User {
-    userId: number =0;
-    bloodTypeId: number | any;
-    name: string | any;
-    lastName: string | any;
-    email: string | any;
-    phoneNumber: string | any;
-    password: string | any;
-    isValidate: boolean =false;
-    isMernisOk:boolean =true;
-    identityNumber: string | any;
+    userId: number;
+    bloodTypeId: number;
+    name: string;
+    lastName: string;
+    email: string;
+    phoneNumber: string ;
+    password: string ;
+    isValidate: boolean;
+    isMernisOk:boolean;
+    identityNumber: string ;
     birthDay: any;
 }
