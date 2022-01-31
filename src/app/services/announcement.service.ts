@@ -17,4 +17,6 @@ export class AnnouncementService {
     let newPath = this.apiUrl+'/getAllAnnouncement';
     return this.httpClient.get<ListResponseModel<Announcement>>(newPath);
   }
+  
+  
 }
