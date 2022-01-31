@@ -7,21 +7,26 @@ import {
 } from '@angular/forms';
 import { ComplaintService } from 'src/app/services/complaint.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { ContactService } from 'src/app/services/contact.service';
+import {Contact} from 'src/app/models/contact/contact';
 @Component({
   selector: 'app-complaint',
   templateUrl: './complaint.component.html',
   styleUrls: ['./complaint.component.css'],
 })
 export class ComplaintComponent implements OnInit {
+
+  contacts: Contact[];
   complaintAddForm: FormGroup;
   constructor(
+    private contactService: ContactService,
     private formBuilder: FormBuilder,
     private complaintService: ComplaintService,
     private toastrService: ToastrService
   ) {}
 
   ngOnInit(): void {
+    this.getAllContact();
     this.createComplaintAddForm();
   }
 
@@ -55,5 +60,12 @@ export class ComplaintComponent implements OnInit {
     } else {
       this.toastrService.error('Form eksik', 'Dikkat');
     }
+  }
+
+  getAllContact(){
+    this.contactService.getAnnouncements().subscribe(resp => {
+      this.contacts = resp.data
+      console.log(this.contacts)
+    })
   }
 }

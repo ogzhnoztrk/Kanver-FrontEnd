@@ -85,10 +85,10 @@
         </h2>
         <hr />
       </div>
-      <div class="row">
+      <div class="row" *ngFor="let contact of contacts">
         <p style="text-align: center; font-size: 25px">
           <b>
-            <span style="color: #de0a1e">Kanbul A.Ş</span>
+            <span style="color: #de0a1e">{{contact.companyName}}</span>
             <strong>&nbsp;</strong>
           </b>
         </p>
@@ -100,24 +100,22 @@
           </b>
         </p>
         <p style="text-align: center; font-size: 25px">
-          "Halk Fırkası Caddesi"
-          <br />
-          "1923.Sokak No:9 -Ankara,Türkiye"
+          {{contact.address}}
         </p>
         <p style="text-align: center; font-size: 25px">
           <b>
             <span style="color: #de0a1e">Telefon:</span>
           </b>
           <span>&nbsp;</span>
-          08550 555 55 55
+          {{contact.phone}}
           <br />
           <b>
             <span style="color: #de0a1e">E-posta:</span>
           </b>
           <span>&nbsp;</span>
-          <a href="mailto:kanbul.destek@gmail.com" target="_blank">
+          <a href="mailto:{{contact.email}}" target="_blank">
             <span style="text-decoration: underline; color: rgb(0, 0, 205)"
-              >kanbul.destek@gmail.com</span
+              >{{contact.email}}</span
             >
           </a>
         </p>
