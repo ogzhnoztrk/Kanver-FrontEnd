@@ -1,94 +1,127 @@
-<body class="py-5"  style="background-color:gray;background-image: url('assets/images/background.jpg');">
+<body
+  class="py-5"
+  style="
+    background-color: gray;
+    background-image: url('assets/images/background.jpg');
+  "
+>
+  <div class="wrap">
+    <div class="header"></div>
 
-   
-     <div class="wrap">
-         <div class="header"></div>
+    <div class="content">
+      <div class="header">
+        <h2 class="page-title" style="text-align: text-justify">
+          <Strong>Şikayet</Strong>
+        </h2>
+        <hr />
+      </div>
+      <br />
+      <br />
+      <div class="row">
+        <form [formGroup]="complaintAddForm">
+          <div class="formGroup">
+            <label for="contact_author" style="text-align: center">
+              <strong>Ad Soyad</strong> (gerekli)</label
+            ><br />
+            <input
+              type="text"
+              name="contact_author"
+              id="fullName"
+              formControlName="fullName"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="_replyto">
+              <strong>E-Posta Adresi</strong> (gerekli)</label
+            ><br />
+            <input
+              type="email"
+              name="_replyto"
+              id="email"
+              formControlName="email"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="contact_subject">
+              <strong>Şikayet Konusu</strong> (gerekli)</label
+            ><br />
+            <input
+              type="text"
+              name="contact_subject"
+              id="complaintSubject"
+              formControlName="complaintSubject"
+              class="form-control"
+              required
+            />
+          </div>
+          <div class="formGroup">
+            <label for="contact_content">
+              <strong>Şikayet</strong> (gerekli)</label
+            ><br />
+            <textarea
+              name="contact_content"
+              id="complaintContent"
+              formControlName="complaintContent"
+              class="form-control"
+              required
+            ></textarea>
+          </div>
 
-         <div class="content">
-             <div class="header">
-                <h2 class="page-title" style="text-align: text-justify;"><Strong>Şikayet</Strong></h2>
-                <hr>
-             </div>
-             <br>
-             <br>
-               <div class="row">
-              
-             <form [formGroup]="complaintAddForm" > 
-                
-                <div class="formGroup">
-                    <label for="contact_author" style="text-align: center;">
-                        <strong>Ad Soyad</strong> (gerekli)</label><br>
-                    <input type="text" name="contact_author" id="fullName" formControlName="fullName" class="form-control" required>
-                </div>
-                <div class="formGroup">
-                    <label for="_replyto">
-                        <strong>E-Posta Adresi</strong> (gerekli)</label><br>
-                    <input type="email" name="_replyto" id="email" formControlName="email" class="form-control" required>
-                </div>            
-                <div class="formGroup">
-                    <label for="contact_subject">
-                        <strong>Şikayet Konusu</strong> (gerekli)</label><br>
-                    <input type="text" name="contact_subject" id="complaintSubject" formControlName="complaintSubject" class="form-control" required>
-                </div>
-                <div class="formGroup">
-                    <label for="contact_content">
-                        <strong>Şikayet</strong> (gerekli)</label><br>
-                    <textarea name="contact_content" id="complaintContent" formControlName="complaintContent" class="form-control" required></textarea>
-                </div>
-               
-                <button (click)="add()" onclick="alert('Başarıyla Gönderildi')">Gönder</button>
-            </form>
-       
-        </div>
-            
-            
-        
-            
-        </div>
-     
-        <div class="sidebar">
-            
-            <div class="page-content-header">
-                <h2 class="page-title" style="text-align: text-justify;"><Strong>İletişim</Strong></h2>
-                  <hr>
-                
-                  </div>
-                  <div class="row" >
-                      <p style="text-align: center ;font-size: 25px;">
-                         <b >
-                             <span style="color: #de0a1e;">Kanbul A.Ş</span>
-                             <strong>&nbsp;</strong>
-        
-                         </b>
-                             
-                      </p>
-                      <p style="text-align: center ;font-size: 20px;">
-                        <b >
-                            <strong>
-                            <span style="color: #de0a1e;">Adres</span>
-                            </strong>
-        
-                        </b>
-                     </p>
-                     <p style="text-align: center ;font-size: 25px;">
-                        "Halk Fırkası Caddesi" 
-                            <br>
-                         "1923.Sokak No:9 -Ankara,Türkiye"   
-                     </p>
-                     <p style="text-align: center ;font-size: 25px;">
-                         <b>
-                             <span style="color: #de0a1e;">Telefon:</span>
-                         </b>
-                            <span>&nbsp;</span>
-                            08550 555 55 55
-                            <br>
-                            <b>
-                                <span style="color: #de0a1e;">E-posta:</span>
-                            </b>
-                            <span>&nbsp;</span>
-                            <a href="mailto:kanbul.destek@gmail.com" target="_blank">
-                                <span style="text-decoration: underline; color: rgb(0, 0, 205);">kanbul.destek@gmail.com</span>
-                            </a>
-                     </p>
-                    </div>
-           
+          <button (click)="add()" onclick="alert('Başarıyla Gönderildi')">
+            Gönder
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="page-content-header">
+        <h2 class="page-title" style="text-align: text-justify">
+          <Strong>İletişim</Strong>
+        </h2>
+        <hr />
+      </div>
+      <div class="row">
+        <p style="text-align: center; font-size: 25px">
+          <b>
+            <span style="color: #de0a1e">Kanbul A.Ş</span>
+            <strong>&nbsp;</strong>
+          </b>
+        </p>
+        <p style="text-align: center; font-size: 20px">
+          <b>
+            <strong>
+              <span style="color: #de0a1e">Adres</span>
+            </strong>
+          </b>
+        </p>
+        <p style="text-align: center; font-size: 25px">
+          "Halk Fırkası Caddesi"
+          <br />
+          "1923.Sokak No:9 -Ankara,Türkiye"
+        </p>
+        <p style="text-align: center; font-size: 25px">
+          <b>
+            <span style="color: #de0a1e">Telefon:</span>
+          </b>
+          <span>&nbsp;</span>
+          08550 555 55 55
+          <br />
+          <b>
+            <span style="color: #de0a1e">E-posta:</span>
+          </b>
+          <span>&nbsp;</span>
+          <a href="mailto:kanbul.destek@gmail.com" target="_blank">
+            <span style="text-decoration: underline; color: rgb(0, 0, 205)"
+              >kanbul.destek@gmail.com</span
+            >
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>

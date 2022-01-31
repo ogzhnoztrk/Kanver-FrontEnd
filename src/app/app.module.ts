@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,7 +18,10 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { AboutComponent } from './components/about/about.component';
 import { UserService } from './services/user.service';
 import { ToastrModule } from 'ngx-toastr';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { RegisterSuccessComponent } from './components/register-success/register-success.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +36,8 @@ import { ToastrModule } from 'ngx-toastr';
     BloodPointsComponent,
     ForgotPasswordComponent,
     AboutComponent,
+    
+    RegisterSuccessComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,3 +54,4 @@ import { ToastrModule } from 'ngx-toastr';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+ 

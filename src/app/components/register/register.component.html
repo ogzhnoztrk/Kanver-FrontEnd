@@ -29,7 +29,12 @@
         <form class="row g-3">
           <div class="col-md-6">
             <label for="inputEmail4" class="form-label">İsim</label>
-            <input type="text" class="form-control" placeholder="İsim" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="İsim"
+              id="name"
+            />
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Soyisim</label>
@@ -38,6 +43,7 @@
               class="form-control"
               placeholder="Soyisim"
               aria-label="Last name"
+              id="lastName"
             />
           </div>
           <div class="col-md-6">
@@ -45,13 +51,13 @@
             <input
               type="email"
               class="form-control"
-              id="inputEmail4"
+              id="email"
               placeholder="ornek@ornek.com"
             />
           </div>
           <div class="col-md-6">
             <label for="inputPassword4" class="form-label">Şifre</label>
-            <input type="password" class="form-control" id="inputPassword4" />
+            <input type="password" class="form-control" id="password" />
           </div>
           <div class="col-12">
             <label class="form-label" for="typePhone">Telefon Numarası</label>
@@ -59,53 +65,61 @@
               type="tel"
               id="typePhone"
               class="form-control"
-              id="Phone4"
+              id="phoneNumber"
               placeholder="05xx xxx xx xx"
             />
           </div>
 
           <div class="col-12">
-            <label class="form-label" for="typeId">Tc Kimlik No</label>
+            <label class="form-label" for="typeId" 
+              >Tc Kimlik No</label
+            >
             <input
               type="Id"
               id="typeId"
               class="form-control"
-              id="Id"
+              id="identityNumber"
               placeholder="xxx xxx xx xxx"
             />
           </div>
 
           <div class="col-12">
-            <label class="form-label" for="typeId">Doğum Günü</label>
+            <label class="form-label" for="typeId" 
+              >Doğum Yılı</label
+            >
             <input
+            
               type="date"
               class="form-control"
-              id="birthday"
+              id="birthDay"
               name="birthday"
+              placeholder="örn:1999"
             />
           </div>
 
-          <div class="col-md-6">
-            <label for="inputCity" class="form-label">Şehir</label>
-            <input type="text" class="form-control" id="inputCity" />
-          </div>
           <div class="col-md-4">
             <label for="inputState" class="form-label">Kan Grubu</label>
-            <select id="inputState" class="form-select">
-              <option value="">...</option>
-              <option value="A+">A+</option>
-              <option value="B+">B+</option>
-              <option value="O+">O+</option>
-              <option value="AB+">AB+</option>
-              <option value="A-">A-</option>
-              <option value="B-">B-</option>
-              <option value="O-">O-</option>
-              <option value="AB-">AB-</option>
+            <select id="bloodType" class="form-select">
+              <option value="1">A+</option>
+              <option value="2">B+</option>
+              <option value="3">AB+</option>
+              <option value="4">0+</option>
+              <option value="5">A-</option>
+              <option value="6">B-</option>
+              <option value="7">AB-</option>
+              <option value="8">0-</option>
             </select>
           </div>
 
           <div class="col-12">
-            <button type="submit" class="btn btn-success">Kayıt Ol</button>
+            <button
+              type="submit"
+              class="btn btn-success"
+              (click)="userRegister()"
+            >
+              Kayıt Ol
+            </button>
+            
           </div>
         </form>
       </ul>

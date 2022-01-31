@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NgModule} from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { RegisterSuccessComponent } from './components/register-success/register-success.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-  },
+  },  
   {
     path:'faq',
     component: FaqComponent
@@ -48,6 +49,10 @@ const routes: Routes = [
   {
     path:'about',
     component: AboutComponent
+  },
+  {
+    path:'register/success',
+    component: RegisterSuccessComponent
   }
 
   
