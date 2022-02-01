@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Announcement } from 'src/app/models/announcement/announcement';
+import { City } from 'src/app/models/city/city';
+import { Donor } from 'src/app/models/donor/donor';
 
 import { User } from 'src/app/models/user/user';
 import { AnnouncementService } from 'src/app/services/announcement.service';
+import { CityService } from 'src/app/services/city.service';
+import { DonorService } from 'src/app/services/donor.service';
 import { UserService } from 'src/app/services/user.service';
 declare var $: any;
 @Component({
@@ -14,18 +18,31 @@ declare var $: any;
 export class ProfileComponent implements OnInit {
   user = new User();
   announcement = new Announcement();
+  cities: any[];
+  donor = new Donor();
 
   constructor(
     private userService: UserService,
-    private announcementService: AnnouncementService
+    private announcementService: AnnouncementService,
+    private cityService: CityService,
+    private donorService:DonorService
   ) {}
 
   ngOnInit(): void {
+    this.getUserByUserId();
+    this.getAllCities();
+  }
+
+  //Prifil bilgilerini getiren method
+  getUserByUserId() {
     var q = document.URL;
     var id = parseInt(q.split('profile/')[1]);
 
     this.userService.getUserById(id).subscribe((response) => {
+      var key = Object.keys(response.data);
       var values = Object.values(response.data);
+      this.user.userId = values[0];
+
       this.user.userId = values[0];
       this.user.bloodTypeId = values[1];
       this.user.name = values[2];
@@ -40,36 +57,66 @@ export class ProfileComponent implements OnInit {
     });
   }
 
-  getUserByUserId() {
-    var q = document.URL;
-    var id = parseInt(q.split('profile/')[1]);
-
-    this.userService.getUserById(id).subscribe((response) => {
-      var key = Object.keys(response.data);
-      var values = Object.values(response.data);
-      this.user.userId = values[0];
-      console.log(values);
-    });
-  }
+  //ilan ekleyen Method
   addAnnouncement() {
-    const d = new Date();
-    let date = d.toString();
     this.announcement.fullName = $('#fullName').val();
     this.announcement.phoneNumber = $('#phoneNumber').val();
     this.announcement.bloodTypeId = parseInt($('#bloodType').val());
     this.announcement.cityId = parseInt($('#city').val());
     this.announcement.explanation = $('#explanation').val();
     this.announcement.urgency = parseInt($('#urgency').val());
-    console.log(this.announcement);
-    console.log("name"+typeof this.announcement.fullName)
-    console.log("number" + typeof this.announcement.phoneNumber)
-    console.log("blood"+typeof this.announcement.bloodTypeId)
-    console.log("city"+typeof this.announcement.cityId)
-    console.log("expl"+typeof this.announcement.explanation)
-    console.log("urgency"+typeof this.announcement.urgency)
 
     this.announcementService
       .addAnnouncement(this.announcement)
-      .subscribe();
+      .subscribe((resp) => {
+        console.log(resp.success);
+
+        if (resp.success) {
+          window.alert('İlan Eklendi');
+        } else {
+          window.alert('ilan Eklenemedi');
+        }
+      });
+  }
+
+  //Şehirleri getiren method
+  getAllCities() {
+    return this.cityService.getAllCities().subscribe((response) => {
+      this.cities = response.data;
+    });
+  }
+
+  //Donor ekleyen method
+  addDonor() {
+    var q = document.URL;
+    var id = parseInt(q.split('profile/')[1]);
+    this.donor.userId = id;
+    this.donor.cityId = parseInt($('#city').val());
+    this.donor.diseaseStatus = this.changeValue(
+      $('#diseaseStatus:checked').val()
+    );
+    this.donor.drugStatus = this.changeValue($('#drugStatus:checked').val());
+
+    this.donor.alcholStatus = this.changeValue(
+      $('#alcholStatus:checked').val()
+    );
+    this.donor.medicationStatus = this.changeValue(
+      $('#medicationStatus:checked').val()
+    );
+    
+    return this.donorService.addDonor(this.donor).subscribe(resp=>{
+      
+        window.alert(resp.message)
+      
+    });
+    
+  }
+
+  changeValue(str: string) {
+    if (str === 'on') {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

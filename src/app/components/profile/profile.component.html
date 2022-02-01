@@ -1,25 +1,36 @@
 <body style="background-image: url('assets/images/background.jpg')" mg>
   <div class="container">
     <div class="header"></div>
-    <div class="main-body" >
-      <div class="row" style="margin-top: 3rem;">
-        <div class="col-lg-4" >
-          <div class="card" style="opacity: 1; background-color: rgba(245, 245, 245, 0.4);">
-            <div class="card-body" >
-              <div class="d-flex flex-column align-items-center text-center" >
+    <div class="main-body">
+      <div class="row" style="margin-top: 3rem">
+        <div class="col-lg-4">
+          <div
+            class="card"
+            style="opacity: 1; background-color: rgba(245, 245, 245, 0.4)"
+          >
+            <div class="card-body">
+              <div class="d-flex flex-column align-items-center text-center">
                 <img
                   src="https://bootdey.com/img/Content/avatar/avatar6.png"
                   alt="Admin"
                   class="rounded-circle p-1 bg-primary"
                   width="110"
                 />
-                <div class="mt-3" >
-                  <h4 style="color: black;">{{user.name.toUpperCase()}}</h4>
-                  <h4 class="text mb-1"style="color: black;">Id: {{user.userId}}</h4>
-                  <h4 class="text mb-1"style="color: black;">{{user.email}}</h4>
-                  <h4 class="text mb-1"style="color: black;">+90{{user.phoneNumber}}</h4>
-                  <h4 class="text mb-1"style="color: black;">{{user.identityNumber}}</h4>
-                  
+                <div class="mt-3">
+                  <h4 style="color: black">{{ user.name.toUpperCase() }}</h4>
+                  <h4 class="text mb-1" style="color: black">
+                    Id: {{ user.userId }}
+                  </h4>
+                  <h4 class="text mb-1" style="color: black">
+                    {{ user.email }}
+                  </h4>
+                  <h4 class="text mb-1" style="color: black">
+                    +90{{ user.phoneNumber }}
+                  </h4>
+                  <h4 class="text mb-1" style="color: black">
+                    {{ user.identityNumber }}
+                  </h4>
+
                   <button
                     class="btn btn-primary"
                     data-bs-toggle="modal"
@@ -27,105 +38,113 @@
                   >
                     Donör Ol
                   </button>
-                  <div
-                    class="modal fade"
-                    id="staticBackdrop"
-                    data-bs-backdrop="static"
-                    data-bs-keyboard="false"
-                    tabindex="-1"
-                    aria-labelledby="staticBackdropLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="staticBackdropLabel">
-                            Donorlük Onayı
-                          </h5>
-                          <button
-                            type="button"
-                            class="btn-close"
-                            data-bs-dismiss="modal"
-                            aria-label="Close"
-                          ></button>
-                        </div>
-                        <div class="col-12">
-                          <div class="form-check form-switch">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              role="switch"
-                              id="flexSwitchCheckDefault"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexSwitchCheckDefault"
-                            >
-                              Alkol Kullanıyor Musunuz?
-                            </label>
+                  <div class="container">
+                    <div
+                      class="modal fade"
+                      id="staticBackdrop"
+                      data-bs-backdrop="static"
+                      data-bs-keyboard="false"
+                      tabindex="-1"
+                      aria-labelledby="staticBackdropLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">
+                              Donorlük Onayı
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
                           </div>
-                          <div class="form-check form-switch">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              role="switch"
-                              id="flexSwitchCheckDefault"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexSwitchCheckDefault"
-                            >
-                              Madde Bağımlılığınız Var Mı?
-                            </label>
+                          <div class="col-12">
+                            <div class="form-check form-switch">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="alcholStatus"
+                                
+                              />
+                              <label> Alkol Kullanıyor Musunuz? </label>
+                            </div>
+                            <div class="form-check form-switch">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="drugStatus"
+                              />
+                              <label> Madde Bağımlılığınız Var Mı? </label>
+                            </div>
+                            <div class="form-check form-switch">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="diseaseStatus"
+                              />
+                              <label>
+                                Kan Vermenize Engel Olacak Hastalığınız Var Mı?
+                              </label>
+                            </div>
+                            <div class="form-check form-switch">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                role="switch"
+                                id="medicationStatus"
+                              />
+                              <label>
+                                Kan Vermenize Engel Olacak Kullandığınız İlaç
+                                Var Mı?
+                              </label>
+                            </div>
+
+                            <div style="margin-left: 4cm">
+                              <div class="col-sm-4">
+                                <div class="mb-2">Şehir</div>
+                              </div>
+                              <div class="col-sm-8 text-secondary">
+                                <select
+                                  class="form-select"
+                                  name="city"
+                                  id="city"
+                                >
+                                  <option
+                                    *ngFor="let city of cities"
+                                    value="{{ city.cityId }}"
+                                  >
+                                    {{ city.cityName }}
+                                  </option>
+                                </select>
+                              </div>
+                            </div>
                           </div>
-                          <div class="form-check form-switch">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              role="switch"
-                              id="flexSwitchCheckDefault"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexSwitchCheckDefault"
-                            >
-                              Kan Vermenize Engel Olacak Hastalığınız Var Mı?
-                            </label>
+                          <div class="modal-body">
+                            Donör Olmayı Onaylıyor Musunuz?
                           </div>
-                          <div class="form-check form-switch">
-                            <input
-                              class="form-check-input"
-                              type="checkbox"
-                              role="switch"
-                              id="flexSwitchCheckDefault"
-                            />
-                            <label
-                              class="form-check-label"
-                              for="flexSwitchCheckDefault"
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
                             >
-                              Kan Vermenize Engel Olacak Kullandığınız İlaç Var
-                              Mı?
-                            </label>
+                              Kapat
+                            </button>
+                            <button
+                              type="button"
+                              class="btn btn-primary"
+                              data-bs-dismiss="modal"
+                              (click)="addDonor()"
+                            >
+                              Onaylıyorum
+                            </button>
                           </div>
-                        </div>
-                        <div class="modal-body">
-                          Donör Olmayı Onaylıyor Musunuz?
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn btn-secondary"
-                            data-bs-dismiss="modal"
-                          >
-                            Kapat
-                          </button>
-                          <button
-                            type="button"
-                            class="btn btn-primary"
-                            data-bs-dismiss="modal"
-                          >
-                            Onaylıyorum
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -133,18 +152,27 @@
                 </div>
               </div>
               <hr class="my-4" />
+             
             </div>
           </div>
         </div>
         <div class="col-lg-8">
-          <div class="card" style="opacity: 1; background-color: rgba(245, 245, 245, 0.4);">
+          <div
+            class="card"
+            style="opacity: 1; background-color: rgba(245, 245, 245, 0.4)"
+          >
             <div class="card-body">
               <div class="row mb-3">
                 <div class="col-sm-3">
                   <h6 class="mb-0">Ad- Soyad</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <input type="text" class="form-control" id="fullName" placeholder="Ahmet Bilmemne" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    placeholder="Ahmet Bilmemne"
+                  />
                 </div>
               </div>
               <div class="row mb-3">
@@ -166,7 +194,6 @@
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <select id="bloodType" class="form-select">
-                    
                     <option value="1">A+</option>
                     <option value="2">B+</option>
                     <option value="3">O+</option>
@@ -184,89 +211,13 @@
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <select class="form-select" name="city" id="city">
-                    <option value="0">------</option>
-                    <option value="1">Adana</option>
-                    <option value="2">Adıyaman</option>
-                    <option value="3">Afyonkarahisar</option>
-                    <option value="4">Ağrı</option>
-                    <option value="5">Amasya</option>
-                    <option value="6">Ankara</option>
-                    <option value="7">Antalya</option>
-                    <option value="8">Artvin</option>
-                    <option value="9">Aydın</option>
-                    <option value="10">Balıkesir</option>
-                    <option value="11">Bilecik</option>
-                    <option value="12">Bingöl</option>
-                    <option value="13">Bitlis</option>
-                    <option value="14">Bolu</option>
-                    <option value="15">Burdur</option>
-                    <option value="16">Bursa</option>
-                    <option value="17">Çanakkale</option>
-                    <option value="18">Çankırı</option>
-                    <option value="19">Çorum</option>
-                    <option value="20">Denizli</option>
-                    <option value="21">Diyarbakır</option>
-                    <option value="22">Edirne</option>
-                    <option value="23">Elazığ</option>
-                    <option value="24">Erzincan</option>
-                    <option value="25">Erzurum</option>
-                    <option value="26">Eskişehir</option>
-                    <option value="27">Gaziantep</option>
-                    <option value="28">Giresun</option>
-                    <option value="29">Gümüşhane</option>
-                    <option value="30">Hakkâri</option>
-                    <option value="31">Hatay</option>
-                    <option value="32">Isparta</option>
-                    <option value="33">Mersin</option>
-                    <option value="34">İstanbul</option>
-                    <option value="35">İzmir</option>
-                    <option value="36">Kars</option>
-                    <option value="37">Kastamonu</option>
-                    <option value="38">Kayseri</option>
-                    <option value="39">Kırklareli</option>
-                    <option value="40">Kırşehir</option>
-                    <option value="41">Kocaeli</option>
-                    <option value="42">Konya</option>
-                    <option value="43">Kütahya</option>
-                    <option value="44">Malatya</option>
-                    <option value="45">Manisa</option>
-                    <option value="46">Kahramanmaraş</option>
-                    <option value="47">Mardin</option>
-                    <option value="48">Muğla</option>
-                    <option value="49">Muş</option>
-                    <option value="50">Nevşehir</option>
-                    <option value="51">Niğde</option>
-                    <option value="52">Ordu</option>
-                    <option value="53">Rize</option>
-                    <option value="54">Sakarya</option>
-                    <option value="55">Samsun</option>
-                    <option value="56">Siirt</option>
-                    <option value="57">Sinop</option>
-                    <option value="58">Sivas</option>
-                    <option value="59">Tekirdağ</option>
-                    <option value="60">Tokat</option>
-                    <option value="61">Trabzon</option>
-                    <option value="62">Tunceli</option>
-                    <option value="63">Şanlıurfa</option>
-                    <option value="64">Uşak</option>
-                    <option value="65">Van</option>
-                    <option value="66">Yozgat</option>
-                    <option value="67">Zonguldak</option>
-                    <option value="68">Aksaray</option>
-                    <option value="69">Bayburt</option>
-                    <option value="70">Karaman</option>
-                    <option value="71">Kırıkkale</option>
-                    <option value="72">Batman</option>
-                    <option value="73">Şırnak</option>
-                    <option value="74">Bartın</option>
-                    <option value="75">Ardahan</option>
-                    <option value="76">Iğdır</option>
-                    <option value="77">Yalova</option>
-                    <option value="78">Karabük</option>
-                    <option value="79">Kilis</option>
-                    <option value="80">Osmaniye</option>
-                    <option value="81">Düzce</option>
-                </select>
+                    <option
+                      *ngFor="let city of cities"
+                      value="{{ city.cityId }}"
+                    >
+                      {{ city.cityName }}
+                    </option>
+                  </select>
                 </div>
               </div>
               <div class="row mb-3">
@@ -288,7 +239,6 @@
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <select id="urgency" class="form-select">
-                   
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -296,36 +246,7 @@
                   </select>
                 </div>
               </div>
-              <!-- <div class="row mb-3">
-              <div class="col-sm-3">
-                <h6 class="mb-0">Kan Türü</h6>
-              </div>
-              <div class="col-sm-9 text-secondary">
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="flexRadioDefault1"
-                  />
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Normal Kan
-                  </label>
-                </div>
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="radio"
-                    name="flexRadioDefault"
-                    id="flexRadioDefault2"
-                    checked
-                  />
-                  <label class="form-check-label" for="flexRadioDefault2">
-                    Trombosit
-                  </label>
-                </div>
-              </div>
-            </div> -->
+
               <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-9 text-secondary">
@@ -333,7 +254,6 @@
                     type="button"
                     class="btn btn-primary px-4"
                     value="İlan Ekle"
-                    
                     (click)="addAnnouncement()"
                   />
                 </div>

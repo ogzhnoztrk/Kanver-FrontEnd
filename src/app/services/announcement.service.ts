@@ -20,6 +20,7 @@ export class AnnouncementService {
   }
   
   addAnnouncement(announcement:Announcement ):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"postAnnouncement",Announcement)  }
+    return this.httpClient.post<ResponseModel>
+    (this.apiUrl+"postAnnouncement",announcement)  }
   
 }

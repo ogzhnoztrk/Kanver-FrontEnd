@@ -1,21 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Donor } from '../models/donor/donor';
+import { City } from '../models/city/city';
 import { ListResponseModel } from '../models/listResponseModel';
-import { ResponseModel } from '../models/response-model';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class DonorService {
-
+export class CityService {
   apiUrl = "https://localhost:44366/"
-
   constructor(private httpClient:HttpClient) { }
 
-  addDonor(donor:Donor ):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>
-    (this.apiUrl+"postDonor",donor)  }
+  getAllCities():Observable<ListResponseModel<City>>{
+    let newPath = this.apiUrl+'getAllCity';
+    return this.httpClient.get<ListResponseModel<City>>(newPath);
+  }
+
 
 }
