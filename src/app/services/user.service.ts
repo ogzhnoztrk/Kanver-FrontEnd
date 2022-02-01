@@ -36,4 +36,8 @@ export class UserService {
     let newPath = this.apiUrl + 'getUserById?id=' + userId;
     return this.httpClient.get<ListResponse>(newPath);
   }
+  sendMail(mail:string): Observable<ListResponse>{
+    let newPath = this.apiUrl + "sendMail?email=" + mail;
+    return this.httpClient.get<ListResponse>(newPath);
+  }
 }
