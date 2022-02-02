@@ -63,7 +63,7 @@ export class ComplaintComponent implements OnInit {
   }
 
   getAllContact(){
-    this.contactService.getAnnouncements().subscribe(resp => {
+    this.contactService.getContacts().subscribe(resp => {
       this.contacts = resp.data
       console.log(this.contacts)
     })

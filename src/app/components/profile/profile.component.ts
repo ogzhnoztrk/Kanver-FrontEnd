@@ -105,18 +105,24 @@ export class ProfileComponent implements OnInit {
     );
     
     return this.donorService.addDonor(this.donor).subscribe(resp=>{
-      
+        
         window.alert(resp.message)
       
     });
     
   }
+ 
+
+
+
+
+  
 
   changeValue(str: string) {
     if (str === 'on') {
-      return true;
-    } else {
       return false;
+    } else {
+      return true;
     }
   }
 }

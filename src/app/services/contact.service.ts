@@ -12,7 +12,7 @@ export class ContactService {
 
   constructor(private httpClient:HttpClient) { }
 
-  getAnnouncements():Observable<ListResponseModel<Contact>>{
+  getContacts():Observable<ListResponseModel<Contact>>{
     let newPath = this.apiUrl+'/getAllContact';
     return this.httpClient.get<ListResponseModel<Contact>>(newPath);
   }
