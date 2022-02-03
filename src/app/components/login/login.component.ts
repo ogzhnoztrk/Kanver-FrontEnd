@@ -11,7 +11,6 @@ declare var $: any;
 export class LoginComponent implements OnInit {
   result: any;
   userId: any;
-  isLoggin: any
 
   constructor(private userService: UserService) {}
 
@@ -30,7 +29,7 @@ export class LoginComponent implements OnInit {
       this.userId = resp.data;
 
       if (this.result) {
-        this.isLoggin = true;
+        window.location.href = '/profile/' + this.userId;
       } else {
         $('.error').css('display', 'block');
       }
