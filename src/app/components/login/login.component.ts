@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 import { User } from 'src/app/models/user/user';
 import { UserService } from 'src/app/services/user.service';
 declare var $: any;
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   result: any;
   userId: any;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router:Router) {}
 
   ngOnInit(): void {}
 
@@ -29,7 +30,8 @@ export class LoginComponent implements OnInit {
       this.userId = resp.data;
 
       if (this.result) {
-        window.location.href = '/profile/' + this.userId;
+        this.router.navigateByUrl("/profile/"+this.userId);
+        
       } else {
         $('.error').css('display', 'block');
       }

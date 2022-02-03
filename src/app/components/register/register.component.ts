@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { User } from 'src/app/models/user/user';
 import { UserService } from 'src/app/services/user.service';
@@ -15,7 +16,7 @@ export class RegisterComponent implements OnInit {
   dateArray: any[];
   date: Date;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {}
   str: any;
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
       this.result = res.success;
 
       if (this.result) {
-        window.location.href = '/register/success';
+        this.router.navigateByUrl('/register/success');
       } else {
         window.alert('Kayıt Yapılamadı Lütfen Bilgilerinizi Kontrol Ediniz');
       }
