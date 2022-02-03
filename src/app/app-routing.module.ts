@@ -8,7 +8,7 @@ import { FaqComponent } from './components/faq/faq.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/header/header.component';
-import { NgModule} from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { RegisterSuccessComponent } from './components/register-success/register-success.component';
@@ -25,37 +25,35 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
-  },  
-  {
-    path:'faq',
-    component: FaqComponent
   },
   {
-    path:'complaint',
-    component: ComplaintComponent
+    path: 'faq',
+    component: FaqComponent,
   },
   {
-    path:'profile/:id',
-    component: ProfileComponent
+    path: 'complaint',
+    component: ComplaintComponent,
   },
   {
-    path:'blood-points',
-    component: BloodPointsComponent
+    path: 'profile/:id',
+    component: ProfileComponent,
   },
   {
-    path:'login/forgot-password',
-    component: ForgotPasswordComponent
+    path: 'blood-points',
+    component: BloodPointsComponent,
   },
   {
-    path:'about',
-    component: AboutComponent
+    path: 'login/forgot-password',
+    component: ForgotPasswordComponent,
   },
   {
-    path:'register/success',
-    component: RegisterSuccessComponent
-  }
-
-  
+    path: 'about',
+    component: AboutComponent,
+  },
+  {
+    path: 'register/success',
+    component: RegisterSuccessComponent,
+  },
 ];
 
 @NgModule({
