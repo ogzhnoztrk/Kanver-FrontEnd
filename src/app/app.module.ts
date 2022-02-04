@@ -22,6 +22,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { RegisterSuccessComponent } from './components/register-success/register-success.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { RegisterSuccessComponent } from './components/register-success/register
       positionClass:"toast-bottom-right"
     })
   ],
-  providers: [UserService],
+  providers: [UserService,{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
