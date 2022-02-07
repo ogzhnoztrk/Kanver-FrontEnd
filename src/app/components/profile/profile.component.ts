@@ -113,11 +113,6 @@ export class ProfileComponent implements OnInit {
   }
  
 
-
-
-
-  
-
   changeValue(str: string) {
     if (str === 'on') {
       return false;
