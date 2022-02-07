@@ -68,7 +68,6 @@
                                 type="checkbox"
                                 role="switch"
                                 id="alcholStatus"
-                                
                               />
                               <label> Alkol Kullanıyor Musunuz? </label>
                             </div>
@@ -152,7 +151,6 @@
                 </div>
               </div>
               <hr class="my-4" />
-             
             </div>
           </div>
         </div>
@@ -194,14 +192,14 @@
                 </div>
                 <div class="col-sm-9 text-secondary">
                   <select id="bloodType" class="form-select">
-                    <option value=1>A+</option>
-                    <option value=2>B+</option>
-                    <option value=3>AB+</option>
-                    <option value=4>O+</option>
-                    <option value=5>A-</option>
-                    <option value=6>B-</option>
-                    <option value=7>AB-</option>
-                    <option value=8>O-</option>
+                    <option value="1">A+</option>
+                    <option value="2">B+</option>
+                    <option value="3">AB+</option>
+                    <option value="4">O+</option>
+                    <option value="5">A-</option>
+                    <option value="6">B-</option>
+                    <option value="7">AB-</option>
+                    <option value="8">O-</option>
                   </select>
                 </div>
               </div>
@@ -210,13 +208,8 @@
                   <h6 class="mb-0">Şehir</h6>
                 </div>
                 <div class="col-sm-9 text-secondary">
-                  <select class="form-select" name="city" id="city">
-                    <option
-                      *ngFor="let city of cities"
-                      value="{{ city.cityId }}"
-                    >
-                      {{ city.cityName }}
-                    </option>
+                  <select class="form-select"  id="cityId">
+                    <option *ngFor="let city of cities"  name="city" value={{city.cityId}}>{{ city.cityName }} </option>
                   </select>
                 </div>
               </div>

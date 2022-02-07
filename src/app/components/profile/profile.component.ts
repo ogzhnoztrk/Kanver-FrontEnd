@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
     private userService: UserService,
     private announcementService: AnnouncementService,
     private cityService: CityService,
-    private donorService:DonorService
+    private donorService: DonorService
   ) {}
 
   ngOnInit(): void {
@@ -61,16 +61,14 @@ export class ProfileComponent implements OnInit {
   addAnnouncement() {
     this.announcement.fullName = $('#fullName').val();
     this.announcement.phoneNumber = $('#phoneNumber').val();
-    this.announcement.bloodTypeId = parseInt($('#bloodType').val());
-    this.announcement.cityId = parseInt($('#city').val());
+    this.announcement.bloodTypeId = $('#bloodType').val();
+    this.announcement.cityId = parseInt($('#cityId').val());
     this.announcement.explanation = $('#explanation').val();
     this.announcement.urgency = parseInt($('#urgency').val());
 
     this.announcementService
       .addAnnouncement(this.announcement)
       .subscribe((resp) => {
-        console.log(resp.success);
-
         if (resp.success) {
           window.alert('İlan Eklendi');
         } else {
@@ -103,15 +101,11 @@ export class ProfileComponent implements OnInit {
     this.donor.medicationStatus = this.changeValue(
       $('#medicationStatus:checked').val()
     );
-    
-    return this.donorService.addDonor(this.donor).subscribe(resp=>{
-        
-        window.alert(resp.message)
-      
+
+    return this.donorService.addDonor(this.donor).subscribe((resp) => {
+      window.alert(resp.message);
     });
-    
   }
- 
 
   changeValue(str: string) {
     if (str === 'on') {
