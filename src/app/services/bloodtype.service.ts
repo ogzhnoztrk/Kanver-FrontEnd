@@ -9,7 +9,7 @@ import { ListResponseModel } from '../models/listResponseModel';
   providedIn: 'root'
 })
 export class BloodTypeService {
-  apiUrl = "https://localhost:44366/"
+  apiUrl = "https://kanver.somee.com/IIS/"
   constructor(private httpClient:HttpClient) { }
 
   getAllBloodTypes():Observable<ListResponseModel<BloodType>>{

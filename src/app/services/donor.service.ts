@@ -12,7 +12,7 @@ import { BloodType } from '../models/bloodType/bloodType';
 })
 export class DonorService {
 
-  apiUrl = "https://localhost:44366/"
+  apiUrl = "https://kanver.somee.com/IIS/"
 
   constructor(private httpClient:HttpClient) { }
 

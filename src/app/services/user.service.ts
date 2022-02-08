@@ -10,7 +10,7 @@ import { ListResponse } from '../models/Response';
   providedIn: 'root',
 })
 export class UserService {
-  apiUrl = 'https://localhost:44366/';
+  apiUrl = 'https://kanver.somee.com/IIS/';
 
   constructor(private httpClient: HttpClient) {}
 

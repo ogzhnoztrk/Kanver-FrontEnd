@@ -191,37 +191,23 @@
           class="col-md-4"
           style="margin-bottom: 10px"
           *ngFor="let announcement of announcements"
+          
         >
           <div class="card" style="width: 18rem">
             <img
-              src="assets/images/blood-types/{{announcement.bloodTypeId}}.png"
+              src="assets/images/blood-types/{{ announcement.bloodTypeId }}.png"
               class="card-img-top"
               alt="..."
             />
             <div class="card-body">
-              <h2 class="card-title">{{announcement.fullName}}</h2>
-              <h2 class="text box">{{announcement.cityId}}</h2>
-              <h2 class="text box">+90{{announcement.phoneNumber}}</h2>
-              <h2 class="text box">{{announcement.explanation}}</h2>
+              <h2 class="card-title">{{ announcement.fullName }}</h2>
+              <h2 class="text box" >{{announcement.cityId}}</h2>
+              <h2 class="text box">+90{{ announcement.phoneNumber }}</h2>
+              <h2 class="text box">{{ announcement.explanation }}</h2>
               
             </div>
           </div>
         </div>
-
-        <!-- PAGINATION -->
-        <!-- <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item disabled">
-              <a class="page-link">Previous</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#">Next</a>
-            </li>
-          </ul>
-        </nav> -->
 
         <!-- mevcut donör -->
         <div class="container" style="margin-bottom: 2rem; margin-top: 5rem">

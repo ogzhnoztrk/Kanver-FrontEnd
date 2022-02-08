@@ -8,12 +8,12 @@ import { ListResponseModel } from '../models/listResponseModel';
   providedIn: 'root'
 })
 export class AboutService {
-  apiUrl = "https://localhost:44366"
+  apiUrl = "https://kanver.somee.com/IIS/"
 
   constructor(private httpClient:HttpClient) { }
 
   getAnnouncements():Observable<ListResponseModel<About>>{
-    let newPath = this.apiUrl+'/getAllAbout';
+    let newPath = this.apiUrl+'getAllAbout';
     return this.httpClient.get<ListResponseModel<About>>(newPath);
   }
 }

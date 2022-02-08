@@ -10,7 +10,7 @@ import { ResponseModel } from '../models/response-model';
   providedIn: 'root'
 })
 export class AnnouncementService {
-  apiUrl = "https://localhost:44366/"
+  apiUrl = "https://kanver.somee.com/IIS/"
 
   constructor(private httpClient:HttpClient) { }
 

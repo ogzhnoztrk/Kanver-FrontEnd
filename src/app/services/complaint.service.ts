@@ -9,12 +9,12 @@ import { ResponseModel } from '../models/response-model';
 })
 export class ComplaintService {
 
-  apiUrl = "https://localhost:44366"
+  apiUrl = "https://kanver.somee.com/IIS/"
 
   constructor(private httpClient:HttpClient) { }
 
   add(complaint: Complaint):Observable<ResponseModel>{
-    return this.httpClient.post<ResponseModel>(this.apiUrl+"/postComplaint",complaint)
+    return this.httpClient.post<ResponseModel>(this.apiUrl+"postComplaint",complaint)
 
   }
 }

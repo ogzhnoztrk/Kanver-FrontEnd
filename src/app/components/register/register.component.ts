@@ -41,7 +41,7 @@ export class RegisterComponent implements OnInit {
 
     this.user.password = $('#password').val();
 
-    this.user.phoneNumber = $('#phoneNumber').val();
+    this.user.phoneNumber ="+90" + $('#phoneNumber').val();
 
     this.userService.registerUser(this.user).subscribe((res) => {
       this.result = res.success;

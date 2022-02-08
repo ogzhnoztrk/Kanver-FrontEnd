@@ -60,7 +60,7 @@ export class ProfileComponent implements OnInit {
   //ilan ekleyen Method
   addAnnouncement() {
     this.announcement.fullName = $('#fullName').val();
-    this.announcement.phoneNumber = $('#phoneNumber').val();
+    this.announcement.phoneNumber ="+90"+ $('#phoneNumber').val();
     this.announcement.bloodTypeId = $('#bloodType').val();
     this.announcement.cityId = parseInt($('#cityId').val());
     this.announcement.explanation = $('#explanation').val();
